@@ -186,14 +186,6 @@ const Skills = () => {
             )}
           </div>
         </div>
-        
-        {/* Skills summary */}
-        <div className="mt-12 text-center text-gray-300 text-sm">
-          <p>
-            With over 10+ tools and frameworks mastered across these domains,
-            <br className="hidden md:block" /> I deliver integrated solutions that solve real-world challenges.
-          </p>
-        </div>
       </div>
       
       {/* CSS for custom animations and patterns */}

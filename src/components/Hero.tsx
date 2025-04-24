@@ -1,11 +1,4 @@
-import {
-  GraduationCap,
-  Database,
-  Server,
-  Github,
-  Mail,
-  Linkedin,
-  Menu,
+import {GraduationCap,Database,Server,Github,Mail,Linkedin,Menu,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -107,7 +100,7 @@ const Hero = () => {
             <div className="absolute -inset-2 bg-gradient-to-tr from-primary to-cyan-400 rounded-full blur-lg opacity-40 group-hover:opacity-70 transition duration-300 animate-pulse z-0" />
             <div className="relative z-10 p-2 bg-gradient-to-br from-gray-900 to-gray-700 rounded-full shadow-2xl border-4 border-primary/50 hover:rotate-1 transition-all duration-300">
               <Avatar className="w-40 h-40 md:w-56 md:h-56 ring-4 ring-primary/30 shadow-xl transition-all duration-500 ease-in-out hover:scale-105">
-                <AvatarImage src="img.jpg" alt="Profile" className="object-cover w-full h-full" />
+                <AvatarImage src="src/img/profile.jpg" alt="Profile" className="object-cover w-full h-full" />
                 <AvatarFallback className="bg-primary/20 text-xl">KP</AvatarFallback>
               </Avatar>
             </div>

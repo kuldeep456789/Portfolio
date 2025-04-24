@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import {Award,Download,FileText,Clock,ChevronRight,Star,ExternalLink,Mail,Calendar,CheckCircle,GraduationCap,Sparkles,Code,Briefcase,Users,Upload
+import {
+  Award, Download, FileText, Clock, ChevronRight, Star, ExternalLink, Mail, Calendar, CheckCircle, GraduationCap, Sparkles, Code, Briefcase, Users, Upload
 } from "lucide-react";
 
 // Achievement data
@@ -97,43 +98,6 @@ const certifications = [
   }
 ];
 
-// // Project data
-// const projects = [
-//   {
-//     title: "AI-Powered Analytics Dashboard",
-//     description: "Real-time data visualization platform with predictive analytics capabilities.",
-//     tags: ["React", "TensorFlow.js", "D3.js"],
-//     link: "#",
-//     color: "blue",
-//     icon: <FileText />
-//   },
-//   {
-//     title: "Cloud-Native Microservices Platform",
-//     description: "Scalable, resilient API gateway with automated deployment pipeline.",
-//     tags: ["Kubernetes", "Docker", "Node.js"],
-//     link: "#",
-//     color: "cyan",
-//     icon: <Code />
-//   },
-//   {
-//     title: "Neural Network Optimization Toolkit",
-//     description: "Library for optimizing deep learning model performance on edge devices.",
-//     tags: ["Python", "PyTorch", "TensorRT"],
-//     link: "#",
-//     color: "purple",
-//     icon: <Sparkles />
-//   },
-//   {
-//     title: "Enterprise Security Framework",
-//     description: "Zero-trust architecture implementation with real-time threat monitoring.",
-//     tags: ["Go", "Rust", "AWS"],
-//     link: "#",
-//     color: "green",
-//     icon: <Shield />
-//   }
-// ];
-
-
 const colorMap = {
   blue: { bg: "from-blue-600/30 to-purple-600/30", tagBg: "bg-blue-900/30", text: "text-blue-300", hover: "hover:text-blue-300" },
   cyan: { bg: "from-cyan-600/30 to-blue-600/30", tagBg: "bg-cyan-900/30", text: "text-cyan-300", hover: "hover:text-cyan-300" },
@@ -141,6 +105,7 @@ const colorMap = {
   green: { bg: "from-green-600/30 to-blue-600/30", tagBg: "bg-green-900/30", text: "text-green-300", hover: "hover:text-green-300" },
 };
 
+// Updated the project cards to allow adding an image instead of an icon
 const projects = [
   {
     title: "AI-Powered Analytics Dashboard",
@@ -148,7 +113,7 @@ const projects = [
     tags: ["React", "TensorFlow.js", "D3.js"],
     link: "#",
     color: "blue",
-    icon: <FileText />
+    image: "src/img/car1.jpg" // Added image property
   },
   {
     title: "Cloud-Native Microservices Platform",
@@ -156,7 +121,7 @@ const projects = [
     tags: ["Kubernetes", "Docker", "Node.js"],
     link: "#",
     color: "cyan",
-    icon: <Code />
+    image: "path/to/image2.jpg" // Added image property
   },
   {
     title: "Neural Network Optimization Toolkit",
@@ -164,7 +129,7 @@ const projects = [
     tags: ["Python", "PyTorch", "TensorRT"],
     link: "#",
     color: "purple",
-    icon: <Sparkles />
+    image: "path/to/image3.jpg" // Added image property
   },
   {
     title: "Enterprise Security Framework",
@@ -172,7 +137,7 @@ const projects = [
     tags: ["Go", "Rust", "AWS"],
     link: "#",
     color: "green",
-    icon: <Shield />
+    image: "path/to/image4.jpg" // Added image property
   }
 ];
 
@@ -198,8 +163,12 @@ const AnimatedBackground = () => {
     </div>
   );
 };
+
+
+
 // Enhanced Resume Preview Card with better hover effects
 const ResumePreview = ({ onDownload, onUpload }) => {
+  const [profileImage, setProfileImage] = useState(null);
   return (
     <div className="relative bg-gray-900/60 border border-gray-700/50 rounded-lg p-6 backdrop-blur-sm mb-8 group hover:shadow-lg hover:shadow-blue-900/30 transition-all duration-300" style={{ height: 'auto', minHeight: '300px' }}>
       <div className="absolute -top-3 -right-3 flex gap-2">
@@ -210,48 +179,34 @@ const ResumePreview = ({ onDownload, onUpload }) => {
         >
           <Download className="h-5 w-5" />
         </button>
-        <button
-          onClick={onUpload}
-          className="bg-green-600 hover:bg-green-700 text-white p-2 rounded-full shadow-lg transform transition-all duration-300 hover:scale-110 group-hover:-translate-y-1 flex items-center justify-center"
-          title="Upload Image"
-        >
-          <Upload className="h-5 w-5" />
-        </button>
       </div>
-
       <div className="flex flex-col md:flex-row items-start gap-6">
-        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/20 md:self-center group-hover:scale-105 transition-transform duration-300">
-          <FileText className="h-40 w-10 text-white" />
-        </div>
-
         <div className="flex-1">
           <h3 className="text-xl font-bold text-white mb-2">My Resume</h3>
-          <p className="text-gray-300 mb-4">Comprehensive overview of my professional experience, skills, and achievements.</p>
-          <img id="uploadedImage" src="" alt="Uploaded Preview" className="w-full h-auto rounded-lg shadow-md" />
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => {
-              const file = e.target.files?.[0];
-              if (file) {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                  const imgElement = document.getElementById('uploadedImage') as HTMLImageElement;
-                  if (imgElement && event.target?.result) {
-                    imgElement.src = event.target.result as string;
-                  }
-                };
-                reader.readAsDataURL(file);
-              }
-            }}
-            className="mt-4 text-sm text-gray-300"
-          />
+          <p className="text-gray-300 mb-4">
+            Comprehensive overview of my professional experience, skills, and achievements.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/kuldeep-prajapati-005080257/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-gray-800 text-white border border-gray-700/50 rounded-lg shadow-sm hover:shadow-xl hover:bg-gray-700/70 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          >
+            Click Me
+          </a>
+
         </div>
       </div>
     </div>
   );
-}
-// Enhanced Featured Projects Section
+};
+
+
+
+
+
+
+// Updated FeaturedProjects component to include mobile view styling
 const FeaturedProjects = () => {
   return (
     <div className="mb-12 backdrop-blur-sm bg-[#323845]/70 border border-gray-700/50 rounded-lg p-6 hover:shadow-xl hover:shadow-blue-900/20 transition-all duration-300">
@@ -260,15 +215,11 @@ const FeaturedProjects = () => {
         Projects
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projects.map((project, index) => (
           <div key={index} className="bg-gray-800/60 rounded-lg overflow-hidden hover:bg-gray-800/80 transition-all duration-300 group">
-            <div className={`h-32 bg-gradient-to-r from-${project.color}-600/30 to-${project.color === 'blue' ? 'purple' : 'blue'}-600/30 relative`}>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                  {project.icon}
-                </div>
-              </div>
+            <div className="h-32 relative">
+              <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
             </div>
             <div className="p-5">
               <h4 className={`text-lg font-semibold text-white mb-2 group-hover:text-${project.color}-300 transition-colors`}>{project.title}</h4>
@@ -288,6 +239,104 @@ const FeaturedProjects = () => {
     </div>
   );
 };
+
+// Fixed mismatched and missing closing tags for JSX components
+const Achievements = () => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {achievements.map((achievement, index) => (
+        <Card
+          key={index}
+          className="backdrop-blur-sm bg-[#323845]/70 hover:bg-[#383E4E]/90 border border-gray-700/50 hover:shadow-xl hover:shadow-blue-900/20 transform transition-all duration-500 hover:-translate-y-1 group"
+          style={{ animationDelay: `${index * 100}ms` }}
+        >
+          <CardContent className="p-5 md:p-6">
+            <div className="flex flex-col gap-4">
+              <div className="flex justify-between items-start">
+                <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-3 rounded-full group-hover:scale-105 transition-transform duration-300">
+                  <Award className="text-yellow-400 h-5 w-5 md:h-6 md:w-6" />
+                </div>
+                <span className="text-sm text-gray-400 flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  {achievement.date}
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-white mb-1 text-center sm:text-left">{achievement.title}</h3>
+                <p className="text-yellow-400 font-medium mb-3 text-center sm:text-left">{achievement.organization}</p>
+                <p className="text-gray-300 text-sm text-center sm:text-left">{achievement.description}</p>
+              </div>
+
+              <div className="mt-auto pt-2 text-center sm:text-left">
+                <a
+                  href={achievement.link}
+                  className="inline-flex items-center text-sm text-yellow-300 hover:text-yellow-200 transition-colors group"
+                >
+                  View details
+                  <ExternalLink className="ml-1 h-3.5 w-3.5 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                </a>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
+};
+
+// Updated Certifications section to include mobile view styling
+const Certifications = () => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {certifications.map((cert, index) => (
+        <Card
+          key={index}
+          className={`backdrop-blur-sm bg-[#323845]/70 hover:bg-[#383E4E]/90 border border-gray-700/50 hover:shadow-xl hover:shadow-${cert.color}-900/20 transform transition-all duration-500 hover:-translate-y-1 group`}
+          style={{ animationDelay: `${index * 100}ms` }}
+        >
+          <CardContent className="p-5 relative overflow-hidden">
+            <div className={`absolute top-0 right-0 w-32 h-32 bg-${cert.color}-500/5 rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:bg-${cert.color}-500/10 transition-all duration-500`}></div>
+
+            <div className="flex items-start justify-between mb-4">
+              <div className={`bg-gradient-to-br from-${cert.color}-500/20 to-blue-500/20 p-2.5 rounded-full group-hover:scale-105 transition-transform duration-300`}>
+                <GraduationCap className={`text-${cert.color}-400 h-5 w-5`} />
+              </div>
+              <a
+                href={cert.link}
+                className={`flex items-center justify-center bg-${cert.color}-900/30 hover:bg-${cert.color}-800/40 text-${cert.color}-300 p-1.5 rounded-full transform transition-all duration-300 hover:scale-110`}
+                title="Verify Certificate"
+              >
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+
+            <h3 className="text-md font-bold text-white mb-1 line-clamp-2">{cert.title}</h3>
+            <p className={`text-${cert.color}-400 font-medium text-sm mb-3`}>{cert.issuer}</p>
+
+            <div className="space-y-2 mt-4">
+              <div className="flex justify-between items-center text-xs text-gray-400">
+                <span>Issue Date</span>
+                <span className="text-white">{cert.date}</span>
+              </div>
+              <div className="flex justify-between items-center text-xs text-gray-400">
+                <span>Expiration</span>
+                <span className="text-white">{cert.expires}</span>
+              </div>
+              <div className="flex justify-between items-center text-xs text-gray-400">
+                <span>Credential ID</span>
+                <span className={`text-${cert.color}-300 font-mono`}>{cert.credentialId}</span>
+              </div>
+            </div>
+ 
+            <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-${cert.color}-500 to-blue-500 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300`}></div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
+};
+
 // Main component - Enhanced with better animations and loading states
 const ProfessionalProfile = () => {
   const [activeTab, setActiveTab] = useState("resume");
@@ -351,15 +400,6 @@ const ProfessionalProfile = () => {
       <AnimatedBackground />
 
       <div className={`max-w-5xl mx-auto relative z-10 transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="text-center mb-12">
-          <button
-            onClick={toggleTheme}
-            className="absolute top-4 right-4 p-2 rounded-full bg-gray-800/70 text-gray-300 hover:text-white transition-colors"
-            title="Change Theme"
-          >
-            <Sparkles className="h-5 w-5" />
-          </button>
-        </div>
 
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {tabs.map((tab) => (
@@ -367,8 +407,8 @@ const ProfessionalProfile = () => {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 ${activeTab === tab.id
-                  ? `bg-gradient-to-r from-${theme}-600 to-purple-600 text-white shadow-lg shadow-${theme}-900/20`
-                  : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70"
+                ? `bg-gradient-to-r from-${theme}-600 to-purple-600 text-white shadow-lg shadow-${theme}-900/20`
+                : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70"
                 }`}
             >
               {tab.icon}
@@ -379,7 +419,7 @@ const ProfessionalProfile = () => {
 
         {activeTab === "resume" && (
           <div className="animate-fadeIn">
-            <ResumePreview onDownload={handleDownloadResume} />
+            <ResumePreview onDownload={handleDownloadResume} onUpload={() => alert('Upload functionality triggered!')} />
             <FeaturedProjects />
           </div>
         )}
@@ -405,12 +445,12 @@ const ProfessionalProfile = () => {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold text-white mb-1">{achievement.title}</h3>
-                      <p className="text-yellow-400 font-medium mb-3">{achievement.organization}</p>
-                      <p className="text-gray-300 text-sm">{achievement.description}</p>
+                      <h3 className="text-lg font-bold text-white mb-1 text-center sm:text-left">{achievement.title}</h3>
+                      <p className="text-yellow-400 font-medium mb-3 text-center sm:text-left">{achievement.organization}</p>
+                      <p className="text-gray-300 text-sm text-center sm:text-left">{achievement.description}</p>
                     </div>
 
-                    <div className="mt-auto pt-2">
+                    <div className="mt-auto pt-2 text-center sm:text-left">
                       <a
                         href={achievement.link}
                         className="inline-flex items-center text-sm text-yellow-300 hover:text-yellow-200 transition-colors group"
@@ -440,53 +480,7 @@ const ProfessionalProfile = () => {
 
         {activeTab === "certifications" && (
           <div className="animate-fadeIn">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {certifications.map((cert, index) => (
-                <Card
-                  key={index}
-                  className={`backdrop-blur-sm bg-[#323845]/70 hover:bg-[#383E4E]/90 border border-gray-700/50 hover:shadow-xl hover:shadow-${cert.color}-900/20 transform transition-all duration-500 hover:-translate-y-1 group`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <CardContent className="p-5 relative overflow-hidden">
-                    <div className={`absolute top-0 right-0 w-32 h-32 bg-${cert.color}-500/5 rounded-full blur-2xl transform translate-x-10 -translate-y-10 group-hover:bg-${cert.color}-500/10 transition-all duration-500`}></div>
-
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`bg-gradient-to-br from-${cert.color}-500/20 to-blue-500/20 p-2.5 rounded-full group-hover:scale-105 transition-transform duration-300`}>
-                        <GraduationCap className={`text-${cert.color}-400 h-5 w-5`} />
-                      </div>
-                      <a
-                        href={cert.link}
-                        className={`flex items-center justify-center bg-${cert.color}-900/30 hover:bg-${cert.color}-800/40 text-${cert.color}-300 p-1.5 rounded-full transform transition-all duration-300 hover:scale-110`}
-                        title="Verify Certificate"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    </div>
-
-                    <h3 className="text-md font-bold text-white mb-1 line-clamp-2">{cert.title}</h3>
-                    <p className={`text-${cert.color}-400 font-medium text-sm mb-3`}>{cert.issuer}</p>
-
-                    <div className="space-y-2 mt-4">
-                      <div className="flex justify-between items-center text-xs text-gray-400">
-                        <span>Issue Date</span>
-                        <span className="text-white">{cert.date}</span>
-                      </div>
-                      <div className="flex justify-between items-center text-xs text-gray-400">
-                        <span>Expiration</span>
-                        <span className="text-white">{cert.expires}</span>
-                      </div>
-                      <div className="flex justify-between items-center text-xs text-gray-400">
-                        <span>Credential ID</span>
-                        <span className={`text-${cert.color}-300 font-mono`}>{cert.credentialId}</span>
-                      </div>
-                    </div>
-
-                    <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-${cert.color}-500 to-blue-500 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300`}></div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
+            <Certifications />
             <div className="mt-12 bg-gradient-to-br from-[#2F3545] to-[#252A38] rounded-lg p-6 border border-gray-700/30 shadow-lg">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="w-32 h-32 relative group perspective">
@@ -515,9 +509,7 @@ const ProfessionalProfile = () => {
                   <div className={`h-2 bg-gradient-to-r from-${project.color}-500 to-${project.color === 'blue' ? 'purple' : 'blue'}-500`}></div>
                   <CardContent className="p-5 relative">
                     <div className="flex items-start justify-between mb-4">
-                      <div className={`bg-${project.color}-500/10 p-2.5 rounded-full group-hover:scale-105 transition-transform duration-300`}>
-                        {project.icon}
-                      </div>
+                      <div className={`bg-${project.color}-500/10 p-2.5 rounded-full group-hover:scale-105 transition-transform duration-300`}></div>
                       <div className="flex gap-2">
                         {project.tags.slice(0, 1).map((tag, tagIndex) => (
                           <span key={tagIndex} className={`px-2 py-1 bg-${project.color}-900/30 text-${project.color}-300 text-xs rounded-full`}>{tag}</span>
