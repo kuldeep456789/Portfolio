@@ -1,14 +1,14 @@
-import {GraduationCap,Database,Server,Github,Mail,Linkedin,Menu,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GraduationCap, Database, Server, Github, Mail, Linkedin, Menu, } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { Link, useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
@@ -159,8 +159,8 @@ const Hero = () => {
                   ML Engineer
                 </span>
                 <span className="text-xs text-gray-400">AI & Algorithms</span>
-              </motion.div> 
-              
+              </motion.div>
+
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ duration: 0.3 }}
@@ -174,7 +174,7 @@ const Hero = () => {
                 </span>
                 <span className="text-xs text-gray-400">CI/CD & Cloud</span>
               </motion.div>
-              
+
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ duration: 0.3 }}
@@ -190,27 +190,27 @@ const Hero = () => {
               </motion.div>
             </div>
 
-
-
-
-
             <div className="flex flex-wrap justify-center md:justify-start gap-4 px-4 md:px-0">
-              <Button variant="outline" className="gap-2 bg-gray-800/50 hover:scale-105 transition border-gray-700 hover:border-primary">
+              <a href="https://github.com/kuldeep456789" target="_blank" className="gap-2 bg-gray-800/50 hover:scale-105 transition border-gray-700 hover:border-primary px-4 py-2 rounded-md flex items-center">
                 <Github size={18} /> GitHub
-              </Button>
-              <Button variant="outline" className="gap-2 bg-gray-800/50 hover:scale-105 transition border-gray-700 hover:border-primary">
+              </a>
+              <a href="https://www.linkedin.com/in/kuldeep-prajapati-005080257/" target="_blank" className="gap-2 bg-gray-800/50 hover:scale-105 transition border-gray-700 hover:border-primary px-4 py-2 rounded-md flex items-center">
                 <Linkedin size={18} /> LinkedIn
-              </Button>
-              <Button className="gap-2 hover:scale-105 transition shadow-lg shadow-primary/20 hover:shadow-primary/30">
+              </a>
+              <a
+                onClick={() => navigate('/contact')}
+                className="gap-2 hover:scale-105 transition shadow-lg shadow-primary/20 hover:shadow-primary/30 px-4 py-2 rounded-md flex items-center cursor-pointer"
+              >
                 <Mail size={18} /> Contact Me
-              </Button>
+              </a>
+
             </div>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Animated Gradient Background and Role Color Animation */}
-      <style jsx>{`
+      <style>{`
         .bg-animated {
           background: linear-gradient(-45deg, #1a1f2c, #202430, #1f2535, #1a1f2c);
           background-size: 400% 400%;
