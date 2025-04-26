@@ -172,22 +172,20 @@ const ResumePreview = ({ onDownload, onUpload }) => {
   return (
     <div className="relative bg-gray-900/60 border border-gray-700/50 rounded-lg p-6 backdrop-blur-sm mb-8 group hover:shadow-lg hover:shadow-blue-900/30 transition-all duration-300" style={{ height: 'auto', minHeight: '300px' }}>
       <div className="absolute -top-3 -right-3 flex gap-2">
-        <button
-          onClick={onDownload}
-          className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full shadow-lg transform transition-all duration-300 hover:scale-110 group-hover:-translate-y-1 flex items-center justify-center"
-          title="Download Resume"
-        >
-          <Download className="h-5 w-5" />
-        </button>
       </div>
       <div className="flex flex-col md:flex-row items-start gap-6">
         <div className="flex-1">
-          <h3 className="text-xl font-bold text-white mb-2">My Resume</h3>
+          <h3 className="text-xl font-bold text-white mb-2">Resume</h3>
           <p className="text-gray-300 mb-4">
-            Comprehensive overview of my professional experience, skills, and achievements.
-          </p>
+          Hi Myself kuldeep Prajapati , i Certily purshing B.tech Degree at Lovely Proffesional University in Punjab,
+          i Speclised in Machine learning and Artfical Engineering and Devops
+          A resume is made to present your skills, education, experiences, 
+          and achievements in a clear and professional way. 
+          It acts as a marketing tool that introduces you to employers, 
+          helping them quickly see why you're a good fit for a job. 
+          A strong resume increases your chances of getting shortlisted for interviews.</p>
           <a
-            href="https://www.linkedin.com/in/kuldeep-prajapati-005080257/"
+            href="https://www.dropbox.com/scl/fi/azp1jegvrywvefpkwvmj3/updated-cv.pdf?rlkey=gdtqxcx3elftv4hipb386dg8x&dl=0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-gray-800 text-white border border-gray-700/50 rounded-lg shadow-sm hover:shadow-xl hover:bg-gray-700/70 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
