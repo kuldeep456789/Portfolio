@@ -109,7 +109,7 @@ const Contact = () => {
                 <Instagram size={18} /> Instagram
               </a>
               <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 bg-red-600 rounded-lg hover:bg-red-700 transition">
-                <YouTube size={18} /> YouTube
+                <Youtube size={18} /> YouTube
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 bg-blue-400 rounded-lg hover:bg-blue-500 transition">
                 <Twitter size={18} /> Twitter

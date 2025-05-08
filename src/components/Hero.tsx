@@ -19,10 +19,11 @@ const Hero = () => {
       {/* Navbar */}
       <nav className="w-full bg-[#1A1F2C] text-white p-4 fixed top-0 z-50 shadow-md">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="text-xl font-bold text-primary">MyLogo</div>
+          <div className="text-xl font-bold text-primary">KP</div>
           <div className="hidden md:flex space-x-6">
             <a href="#about" className="hover:text-primary transition">About</a>
             <a href="#contact" className="hover:text-primary transition">Contact</a>
+            <a href="#project" className="hover:text-primary transition">Project</a>
           </div>
           <div className="md:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)}>
@@ -34,6 +35,7 @@ const Hero = () => {
           <div className="md:hidden mt-2 space-y-2 text-center bg-[#2A2F3C] rounded-lg p-4">
             <a href="#about" className="block hover:text-primary">About</a>
             <a href="#contact" className="block hover:text-primary">Contact</a>
+            <a href="#project" className="hover:text-primary transition">Project</a>
           </div>
         )}
       </nav>
@@ -150,7 +152,8 @@ const Hero = () => {
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ duration: 0.3 }}
-                className="flex flex-col items-center gap-2 p-4 bg-gradient-to-b from-gray-800/80 to-gray-900/80 rounded-xl shadow-lg border border-primary/20 hover:border-primary/40"
+                className="flex flex-col items-center gap-2 p-4 bg-gradient-to-b from-gray-800/80 to-gray-900/80 rounded-xl shadow-lg border border-primary/20 hover:border-primary/40 cursor-pointer"
+                onClick={() => navigate('/tranner')}
               >
                 <div className="p-2 rounded-full bg-primary/10">
                   <Database className="text-primary h-6 md:h-8 w-6 md:w-8" />
@@ -164,7 +167,23 @@ const Hero = () => {
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ duration: 0.3 }}
-                className="flex flex-col items-center gap-2 p-4 bg-gradient-to-b from-gray-800/80 to-gray-900/80 rounded-xl shadow-lg border border-primary/20 hover:border-primary/40"
+                className="flex flex-col items-center gap-2 p-4 bg-gradient-to-b from-gray-800/80 to-gray-900/80 rounded-xl shadow-lg border border-primary/20 hover:border-primary/40 cursor-pointer"
+                // onClick={() => navigate('/python')}
+              >
+                <div className="p-2 rounded-full bg-primary/10">
+                  <GraduationCap className="text-primary h-6 md:h-8 w-6 md:w-8" />
+                </div>
+                <span className="font-medium text-sm md:text-base fullstack-highlight">
+                  Python
+                </span>
+                <span className="text-xs text-gray-400">DSA</span>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.3 }}
+                className="flex flex-col items-center gap-2 p-4 bg-gradient-to-b from-gray-800/80 to-gray-900/80 rounded-xl shadow-lg border border-primary/20 hover:border-primary/40 cursor-pointer"
+                onClick={() => navigate('/devops')}
               >
                 <div className="p-2 rounded-full bg-primary/10">
                   <Server className="text-primary h-6 md:h-8 w-6 md:w-8" />
@@ -178,7 +197,8 @@ const Hero = () => {
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ duration: 0.3 }}
-                className="flex flex-col items-center gap-2 p-4 bg-gradient-to-b from-gray-800/80 to-gray-900/80 rounded-xl shadow-lg border border-primary/20 hover:border-primary/40"
+                className="flex flex-col items-center gap-2 p-4 bg-gradient-to-b from-gray-800/80 to-gray-900/80 rounded-xl shadow-lg border border-primary/20 hover:border-primary/40 cursor-pointer"
+                onClick={() => navigate('/fullstack')}
               >
                 <div className="p-2 rounded-full bg-primary/10">
                   <GraduationCap className="text-primary h-6 md:h-8 w-6 md:w-8" />
@@ -186,7 +206,7 @@ const Hero = () => {
                 <span className="font-medium text-sm md:text-base fullstack-highlight">
                   Full Stack
                 </span>
-                <span className="text-xs text-gray-400">Web & Mobile</span>
+                <span className="text-xs text-gray-400">Web Dev</span>
               </motion.div>
             </div>
 
