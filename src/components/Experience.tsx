@@ -109,10 +109,10 @@ const projects = [
   {
     title: "AI-Powered Analytics Dashboard",
     description: "Real-time data visualization platform with predictive analytics capabilities.",
-    tags: ["React", "TensorFlow.js", "D3.js"],
-    link: "#",
+    tags: ["Streamlit", "Python", "Opencv"],
+    link: "https://realtimevechile-detection-using-yolov8n-master-ffhtjisz3cyh9y8.streamlit.app/",
     color: "blue",
-    image: "src/img/car1.jpg" // Added image property
+    image: "src/img/real-time-tracking.jpg" // Added image property
   },
   {
     title: "Cloud-Native Microservices Platform",
@@ -123,20 +123,20 @@ const projects = [
     image: "path/to/image2.jpg" // Added image property
   },
   {
-    title: "Neural Network Optimization Toolkit",
+    title: "Ai Safety Watchtower Dashboard",
     description: "Library for optimizing deep learning model performance on edge devices.",
-    tags: ["Python", "PyTorch", "TensorRT"],
-    link: "#",
+    tags: ["React", "Typescript", "vite"],
+    link: "https://ai-safety-watchtower-dashboard.vercel.app/",
     color: "purple",
-    image: "path/to/image3.jpg" // Added image property
+    image: "/src/img/dashboard.png" // Added image property
   },
   {
-    title: "Enterprise Security Framework",
+    title: "Summer collection",
     description: "Zero-trust architecture implementation with real-time threat monitoring.",
-    tags: ["Go", "Rust", "AWS"],
-    link: "#",
+    tags: ["React", "Typescript", "vite"],
+    link: "https://summerkart.vercel.app/",
     color: "green",
-    image: "path/to/image4.jpg" // Added image property
+    image: "src/img/summker.jpeg" // Added image property
   }
 ];
 
@@ -176,7 +176,7 @@ const ResumePreview = ({ onDownload, onUpload }) => {
         <div className="flex-1">
           <h3 className="text-xl font-bold text-white mb-2">Resume</h3>
           <p className="text-gray-300 mb-4">
-          Hi Myself kuldeep Prajapati , i Certily purshing B.tech Degree at Lovely Proffesional University in Punjab,
+          Hi Myself kuldeep Prajapati , I am recently pursuing a B.Tech Degree at Lovely Professional University in Punjab,
           i Speclised in Machine learning and Artfical Engineering and Devops
           A resume is made to present your skills, education, experiences, 
           and achievements in a clear and professional way. 

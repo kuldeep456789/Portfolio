@@ -91,22 +91,34 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left"
         >
-          {/* Avatar on right side */}
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            className="relative mb-8 md:mb-0 md:order-2 group"
-          >
-            <div className="absolute -inset-2 bg-gradient-to-tr from-primary to-cyan-400 rounded-full blur-lg opacity-40 group-hover:opacity-70 transition duration-300 animate-pulse z-0" />
-            <div className="relative z-10 p-2 bg-gradient-to-br from-gray-900 to-gray-700 rounded-full shadow-2xl border-4 border-primary/50 hover:rotate-1 transition-all duration-300">
-              <Avatar className="w-40 h-40 md:w-56 md:h-56 ring-4 ring-primary/30 shadow-xl transition-all duration-500 ease-in-out hover:scale-105">
-                <AvatarImage src="src/img/profile.jpg" alt="Profile" className="object-cover w-full h-full" />
-                <AvatarFallback className="bg-primary/20 text-xl">KP</AvatarFallback>
-              </Avatar>
-            </div>
-          </motion.div>
+          
+
+
+
+          {/* Avatar on right side - Modern Portfolio Style */}
+<motion.div
+  initial={{ x: 100, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 1, delay: 0.5 }}
+  whileHover={{ scale: 1.03 }}
+  className="relative mb-8 md:mb-0 md:order-2 group"
+>
+  {/* Decorative background glow */}
+  <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-transparent rounded-full blur-lg opacity-50 group-hover:opacity-80 transition-all duration-500 z-0" />
+
+  <div className="relative z-10 p-2 border-4 border-primary/30 rounded-full shadow-2xl hover:rotate-1 transition-all duration-300 bg-white/10 backdrop-blur-sm">
+    <Avatar className="w-40 h-40 md:w-56 md:h-56 ring ring-primary/30 shadow-xl transition-transform duration-500 hover:scale-105 overflow-hidden">
+      <AvatarImage
+        src="src/img/profile.jpg"
+        alt="Profile"
+        className="object-cover w-full h-full"
+      />
+      {/* Optional fallback */}
+      {/* <AvatarFallback className="bg-primary/20 text-xl font-bold">KP</AvatarFallback> */}
+    </Avatar>
+  </div>
+</motion.div>
+
 
           {/* Text and Buttons on left side */}
           <motion.div
