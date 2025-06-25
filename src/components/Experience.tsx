@@ -42,21 +42,21 @@ const achievements = [
 // Certification data
 const certifications = [
   {
-    title: "AWS Certified Solutions Architect - Professional",
-    issuer: "Amazon Web Services",
-    date: "September 2023",
-    expires: "September 2026",
-    credentialId: "AWS-PSA-123456",
-    link: "#",
+    title: "Cipher school from (java)",
+    issuer: "Cipher school",
+    date: "April 2024",
+    expires: "May 2024",
+    credentialId: "CSW2024-13223",
+    link: "https://www.dropbox.com/scl/fi/irwo2ehn9qm5vyjyne9k3/cipher_school-java-summer-term.pdf?rlkey=qjlajrwuzxr94d8q823kec7be&st=71o9a1p5&dl=0",
     color: "blue"
   },
   {
-    title: "Google Professional Machine Learning Engineer",
-    issuer: "Google Cloud",
-    date: "May 2023",
-    expires: "May 2025",
-    credentialId: "GPMLE-789012",
-    link: "#",
+    title: "Hackaton ",
+    issuer: "WEB-E=-STAND",
+    date: "feb 2025",
+    expires: "feb 2025",
+    credentialId: "WEB-E-2025-12345",
+    link: "https://www.dropbox.com/scl/fi/zmbb3jv3qmw3uffiaav0l/web-e-stand.pdf?rlkey=1ixxyburv2ci7jfjtrh859fqm&st=7johk0h5&dl=0",
     color: "green"
   },
   {
@@ -112,7 +112,8 @@ const projects = [
     tags: ["Streamlit", "Python", "Opencv"],
     link: "https://realtimevechile-detection-using-yolov8n-master-ffhtjisz3cyh9y8.streamlit.app/",
     color: "blue",
-    image: "src/img/real-time-tracking.jpg" // Added image property
+    image: "src/img/real-time-tracking.jpg"
+    // <img href="src/img/real-time-tracking.jpg"/> // Added image property
   },
   {
     title: "Cloud-Native Microservices Platform",

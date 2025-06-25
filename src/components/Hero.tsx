@@ -109,7 +109,7 @@ const Hero = () => {
   <div className="relative z-10 p-2 border-4 border-primary/30 rounded-full shadow-2xl hover:rotate-1 transition-all duration-300 bg-white/10 backdrop-blur-sm">
     <Avatar className="w-40 h-40 md:w-56 md:h-56 ring ring-primary/30 shadow-xl transition-transform duration-500 hover:scale-105 overflow-hidden">
       <AvatarImage
-        src="src/img/profile.jpg"
+        src="src/img/profile.webp"
         alt="Profile"
         className="object-cover w-full h-full"
       />
