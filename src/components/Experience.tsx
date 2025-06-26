@@ -112,7 +112,7 @@ const projects = [
     tags: ["Streamlit", "Python", "Opencv"],
     link: "https://realtimevechile-detection-using-yolov8n-master-ffhtjisz3cyh9y8.streamlit.app/",
     color: "blue",
-    image: "src/img/real-time-tracking.jpg"
+    image: "/src/img/real-time-tracking.jpg"
     // <img href="src/img/real-time-tracking.jpg"/> // Added image property
   },
   {
@@ -121,7 +121,7 @@ const projects = [
     tags: ["Kubernetes", "Docker", "Node.js"],
     link: "#",
     color: "cyan",
-    image: "path/to/image2.jpg" // Added image property
+    image: "/src/img/blog editor.webp" // Added image property
   },
   {
     title: "Ai Safety Watchtower Dashboard",
@@ -129,7 +129,7 @@ const projects = [
     tags: ["React", "Typescript", "vite"],
     link: "https://ai-safety-watchtower-dashboard.vercel.app/",
     color: "purple",
-    image: "/src/img/dashboard.png" // Added image property
+    image: "/src/img/asi safety.webp" // Added image property
   },
   {
     title: "Summer collection",
@@ -137,7 +137,7 @@ const projects = [
     tags: ["React", "Typescript", "vite"],
     link: "https://summerkart.vercel.app/",
     color: "green",
-    image: "src/img/summker.jpeg" // Added image property
+    image: "/src/img/summer kart.webp" // Added image property
   }
 ];
 
