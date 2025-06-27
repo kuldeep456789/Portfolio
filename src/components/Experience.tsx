@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import {Award, Download, FileText, Clock, ChevronRight, Star, ExternalLink, Mail, Calendar, CheckCircle, GraduationCap, Sparkles, Code, Briefcase, Users, Upload
+import { Award, Download, FileText, Clock, ChevronRight, Star, ExternalLink, Mail, Calendar, CheckCircle, GraduationCap, Sparkles, Code, Briefcase, Users, Upload
 } from "lucide-react";
 import websiteImg from '../img/summer kart.webp';
+import blogimage from '../img/blog editor.webp';
+
 // Achievement data
 const achievements = [
   {
@@ -39,7 +41,7 @@ const achievements = [
   }
 ];
 
-// Certification data
+// Certification data (removed duplicate CKA entry)
 const certifications = [
   {
     title: "Cipher school from (java)",
@@ -85,15 +87,6 @@ const certifications = [
     credentialId: "CKA-567890",
     link: "#",
     color: "purple"
-  },
-  {
-    title: "Certified Kubernetes Administrator (CKA)",
-    issuer: "Cloud Native Computing Foundation",
-    date: "March 2021",
-    expires: "March 2024",
-    credentialId: "CKA-567890",
-    link: "#",
-    color: "purple"
   }
 ];
 
@@ -112,8 +105,7 @@ const projects = [
     tags: ["Streamlit", "Python", "Opencv"],
     link: "https://realtimevechile-detection-using-yolov8n-master-ffhtjisz3cyh9y8.streamlit.app/",
     color: "blue",
-    image: "/src/img/real-time-tracking.jpg"
-    // <img href="src/img/real-time-tracking.jpg"/> // Added image property
+    image: require('../img/real-time-tracking.jpg') // Use require for local image
   },
   {
     title: "Cloud-Native Microservices Platform",
@@ -121,7 +113,7 @@ const projects = [
     tags: ["Kubernetes", "Docker", "Node.js"],
     link: "#",
     color: "cyan",
-    image: "/src/img/blog editor.webp" // Added image property
+    image: blogimage
   },
   {
     title: "Ai Safety Watchtower Dashboard",
@@ -129,7 +121,7 @@ const projects = [
     tags: ["React", "Typescript", "vite"],
     link: "https://ai-safety-watchtower-dashboard.vercel.app/",
     color: "purple",
-    image: "/src/img/asi safety.webp" // Added image property
+    image: require('../img/asi safety.webp')
   },
   {
     title: "Summer collection",
@@ -137,7 +129,7 @@ const projects = [
     tags: ["React", "Typescript", "vite"],
     link: "https://summerkart.vercel.app/",
     color: "green",
-    image: websiteImg // Use imported webp image
+    image: websiteImg
   }
 ];
 
@@ -252,20 +244,19 @@ const Achievements = () => {
             <div className="flex flex-col gap-4">
               <div className="flex justify-between items-start">
                 <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-3 rounded-full group-hover:scale-105 transition-transform duration-300">
-                  <Award className="text-yellow-400 h-5 w-5 md:h-6 md:w-6" />
+                  {/* Use the icon property */}
+                  {achievement.icon}
                 </div>
                 <span className="text-sm text-gray-400 flex items-center">
                   <Calendar className="h-4 w-4 mr-1" />
                   {achievement.date}
                 </span>
               </div>
-
               <div>
                 <h3 className="text-lg font-bold text-white mb-1 text-center sm:text-left">{achievement.title}</h3>
                 <p className="text-yellow-400 font-medium mb-3 text-center sm:text-left">{achievement.organization}</p>
                 <p className="text-gray-300 text-sm text-center sm:text-left">{achievement.description}</p>
               </div>
-
               <div className="mt-auto pt-2 text-center sm:text-left">
                 <a
                   href={achievement.link}
