@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {Award, Download, FileText, Clock, ChevronRight, Star, ExternalLink, Mail, Calendar, CheckCircle, GraduationCap, Sparkles, Code, Briefcase, Users, Upload
 } from "lucide-react";
-
+import websiteImg from '../img/summer kart.webp';
 // Achievement data
 const achievements = [
   {
@@ -137,7 +137,7 @@ const projects = [
     tags: ["React", "Typescript", "vite"],
     link: "https://summerkart.vercel.app/",
     color: "green",
-    image: "/src/img/summer kart.webp" // Added image property
+    image: websiteImg // Use imported webp image
   }
 ];
 
