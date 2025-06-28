@@ -4,6 +4,7 @@ import { Award, Download, FileText, Clock, ChevronRight, Star, ExternalLink, Mai
 } from "lucide-react";
 import websiteImg from '../img/summer kart.webp';
 import blogimage from '../img/blog editor.webp';
+import safety from '../img/asi safety.webp';
 
 // Achievement data
 const achievements = [
@@ -105,13 +106,13 @@ const projects = [
     tags: ["Streamlit", "Python", "Opencv"],
     link: "https://realtimevechile-detection-using-yolov8n-master-ffhtjisz3cyh9y8.streamlit.app/",
     color: "blue",
-    image: require('../img/real-time-tracking.jpg') // Use require for local image
+    // image: require('../img/real-time-tracking.jpg').default // Fix for require with ES modules
   },
   {
-    title: "Cloud-Native Microservices Platform",
-    description: "Scalable, resilient API gateway with automated deployment pipeline.",
-    tags: ["Kubernetes", "Docker", "Node.js"],
-    link: "#",
+    title: "Blog Editor Save and Draft",
+    description: "Is based on your Blog editing , save draft, and published over the internet",
+    tags: ["React.js", "Docker", "flask", "Django"],
+    link: "",
     color: "cyan",
     image: blogimage
   },
@@ -121,7 +122,7 @@ const projects = [
     tags: ["React", "Typescript", "vite"],
     link: "https://ai-safety-watchtower-dashboard.vercel.app/",
     color: "purple",
-    image: require('../img/asi safety.webp')
+    image: safety
   },
   {
     title: "Summer collection",

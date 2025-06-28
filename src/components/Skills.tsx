@@ -28,6 +28,17 @@ const categoryIcons = {
   "Full Stack": <Code className="h-6 w-6" />
 };
 
+// Add a color map for progress bar backgrounds
+const colorMap = {
+  "bg-blue-500": "#3b82f6",
+  "bg-orange-500": "#f59e42",
+  "bg-green-500": "#22c55e",
+  "bg-blue-400": "#60a5fa",
+  "bg-blue-600": "#2563eb",
+  "bg-green-400": "#4ade80",
+  "bg-cyan-400": "#22d3ee",
+};
+
 const Skills = () => {
   const [visibleSkills, setVisibleSkills] = useState({});
   const [activeCategory, setActiveCategory] = useState(null);
@@ -73,7 +84,7 @@ const Skills = () => {
     return {
       width: `${level}%`,
       transition: "width 1.5s ease-out",
-      background: `linear-gradient(90deg, ${color.replace('bg-', 'var(--')}) 0%, ${color.replace('bg-', 'var(--')}-500) 100%)`
+      background: colorMap[color] || "#fff"
     };
   };
 
@@ -173,8 +184,10 @@ const Skills = () => {
                           <div 
                             className="h-full rounded-full"
                             style={{
-                              ...getProgressStyle(0, skill.color),
-                              width: visibleSkills[activeCategory] ? `${skill.level}%` : "0%"
+                              ...getProgressStyle(
+                                visibleSkills[activeCategory] ? skill.level : 0,
+                                skill.color
+                              )
                             }}
                           />
                         </div>
