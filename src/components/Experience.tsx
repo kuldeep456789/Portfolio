@@ -3,9 +3,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Award, Download, FileText, Clock, ChevronRight, Star, ExternalLink, Mail, Calendar, CheckCircle, GraduationCap, Sparkles, Code, Briefcase, Users, Upload
 } from "lucide-react";
 import websiteImg from '../img/summer kart.webp';
-import blogimage from '../img/blog editor.webp';
-import safety from '../img/asi safety.webp';
-
+import blogimage from '../img/blog.webp';
+import safety from '../img/ai safety.webp';
+import currency from '../img/currency.webp';
 // Achievement data
 const achievements = [
   {
@@ -101,18 +101,19 @@ const colorMap = {
 // Updated the project cards to allow adding an image instead of an icon
 const projects = [
   {
-    title: "AI-Powered Analytics Dashboard",
-    description: "Real-time data visualization platform with predictive analytics capabilities.",
+    title: "Currency Convertor",
+    description: "Currency converter quickly converts amounts between different international currencies in real-time.",
     tags: ["Streamlit", "Python", "Opencv"],
     link: "https://realtimevechile-detection-using-yolov8n-master-ffhtjisz3cyh9y8.streamlit.app/",
     color: "blue",
     // image: require('../img/real-time-tracking.jpg').default // Fix for require with ES modules
+    image: currency
   },
   {
     title: "Blog Editor Save and Draft",
     description: "Is based on your Blog editing , save draft, and published over the internet",
     tags: ["React.js", "Docker", "flask", "Django"],
-    link: "",
+    link: "https://blog-create-6huw.vercel.app/",
     color: "cyan",
     image: blogimage
   },

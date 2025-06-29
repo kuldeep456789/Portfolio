@@ -51,7 +51,7 @@ const Projects = () => {
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-white">Featured Projects</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-white">Majar Projects</h2>
         <Carousel className="w-full max-w-3xl mx-auto">
           <CarouselContent>
             {projects.map((project, index) => (
