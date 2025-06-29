@@ -122,15 +122,15 @@ import { GraduationCap, Database, Server, Github, Mail, Linkedin, Menu, } from "
                   {/* <AvatarFallback className="bg-primary/20 text-2xl font-bold">KP</AvatarFallback> */}
                 </Avatar>
                 {/* DEV badge overlay */}
-                {/* <span className="absolute bottom-5 right-5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg border border-white/10 tracking-widest animate-bounce-slow select-none">
-                  DEV
-                </span> */}
+                <span className="absolute bottom-5 right-5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg border border-white/10 tracking-widest animate-bounce-slow select-none">
+                  Keen to learn more
+                </span>
                 {/* Animated glow */}
-                <div className="absolute inset-0 rounded-full pointer-events-none animate-glow"></div>
+                {/* <div className="absolute inset-0 rounded-full pointer-events-none animate-glow"></div> */}
                 {/* Extra animated ring for uniqueness */}
-                <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+                {/* <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
                   <div className="w-[115%] h-[115%] rounded-full border-2 border-dashed border-cyan-400/30 animate-spin-slow"></div>
-                </div>
+                </div> */}
               </div>
               {/* Modern Portfolio Avatar Design End */}
             </motion.div>
