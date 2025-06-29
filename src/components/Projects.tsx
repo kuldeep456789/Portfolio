@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -71,7 +70,10 @@ const Projects = () => {
                       ))}
                     </div>
                     <div className="flex flex-wrap gap-3 md:gap-4">
-                      <Button variant="outline" className="gap-2 hover:scale-105 transition-transform text-sm md:text-base">
+                      <Button
+                        variant="outline"
+                        className="gap-2 hover:scale-105 transition-transform text-sm md:text-base border-green-500 text-green-400 hover:bg-green-900/20"
+                      >
                         <Github size={16} />
                         Code
                       </Button>

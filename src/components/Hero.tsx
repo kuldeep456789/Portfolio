@@ -6,7 +6,7 @@ import { GraduationCap, Database, Server, Github, Mail, Linkedin, Menu, } from "
   import { loadFull } from "tsparticles";
   import { Link, useNavigate } from "react-router-dom";
   import profileImg from '../../img/profile.webp';
-  import websiteImg from '../img/website.webp';
+  import websiteImg from '../img/profile.webp';
 
 
   const Hero = () => {
@@ -105,17 +105,34 @@ import { GraduationCap, Database, Server, Github, Mail, Linkedin, Menu, } from "
               {/* Decorative background glow */}
               <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-transparent rounded-full blur-lg opacity-50 group-hover:opacity-80 transition-all duration-500 z-0" />
 
-              <div className="relative z-10 p-2 border-4 border-primary/30 rounded-full shadow-2xl hover:rotate-1 transition-all duration-300 bg-white/10 backdrop-blur-sm">
-                <Avatar className="w-40 h-40 md:w-56 md:h-56 ring ring-primary/30 shadow-xl transition-transform duration-500 hover:scale-105 overflow-hidden">
+              {/* Modern Portfolio Avatar Design */}
+              <div className="relative z-10 p-3 rounded-full bg-gradient-to-br from-[#232946] to-[#1a1f2c] shadow-2xl border-4 border-white/10 hover:rotate-1 transition-all duration-300 backdrop-blur-md group">
+                {/* Animated gradient ring */}
+                <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+                  <div className="w-full h-full rounded-full bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-500 blur-2xl opacity-60 animate-pulse-slow"></div>
+                </div>
+                {/* Avatar with increased size and ring */}
+                <Avatar className="w-56 h-56 md:w-80 md:h-80 ring-4 ring-cyan-400/30 shadow-2xl hover:scale-105 transition-transform duration-500 overflow-hidden">
                   <AvatarImage
                     src={websiteImg}
                     alt="Profile"
                     className="object-cover w-full h-full"
                   />
                   {/* Optional fallback */}
-                  {/* <AvatarFallback className="bg-primary/20 text-xl font-bold">KP</AvatarFallback> */}
+                  {/* <AvatarFallback className="bg-primary/20 text-2xl font-bold">KP</AvatarFallback> */}
                 </Avatar>
+                {/* DEV badge overlay */}
+                {/* <span className="absolute bottom-5 right-5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg border border-white/10 tracking-widest animate-bounce-slow select-none">
+                  DEV
+                </span> */}
+                {/* Animated glow */}
+                <div className="absolute inset-0 rounded-full pointer-events-none animate-glow"></div>
+                {/* Extra animated ring for uniqueness */}
+                <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+                  <div className="w-[115%] h-[115%] rounded-full border-2 border-dashed border-cyan-400/30 animate-spin-slow"></div>
+                </div>
               </div>
+              {/* Modern Portfolio Avatar Design End */}
             </motion.div>
 
 
@@ -187,7 +204,7 @@ import { GraduationCap, Database, Server, Github, Mail, Linkedin, Menu, } from "
                   <span className="font-medium text-sm md:text-base fullstack-highlight">
                     Python
                   </span>
-                  <span className="text-xs text-gray-400">DSA</span>
+                  <span className="text-xs text-gray-400">DSA/OOPS/Algo</span>
                 </motion.div>
 
                 <motion.div
@@ -217,7 +234,7 @@ import { GraduationCap, Database, Server, Github, Mail, Linkedin, Menu, } from "
                   <span className="font-medium text-sm md:text-base fullstack-highlight">
                     Full Stack
                   </span>
-                  <span className="text-xs text-gray-400">Web Dev</span>
+                  <span className="text-xs text-gray-400">Web/App Dev</span>
                 </motion.div>
               </div>
 
@@ -318,6 +335,37 @@ import { GraduationCap, Database, Server, Github, Mail, Linkedin, Menu, } from "
             height: 3px;
           }
         `}</style>
+        <style>{`
+                .animate-pulse-slow {
+                  animation: pulse-slow 3s infinite;
+                }
+                @keyframes pulse-slow {
+                  0%, 100% { opacity: 0.6; }
+                  50% { opacity: 1; }
+                }
+                .animate-spin-slow {
+                  animation: spin 12s linear infinite;
+                }
+                @keyframes spin {
+                  100% { transform: rotate(360deg); }
+                }
+                .animate-glow {
+                  box-shadow: 0 0 40px 10px #00bcd4, 0 0 80px 20px #3b82f6;
+                  opacity: 0.15;
+                  animation: glow 2.5s ease-in-out infinite alternate;
+                }
+                @keyframes glow {
+                  0% { opacity: 0.12; }
+                  100% { opacity: 0.22; }
+                }
+                .animate-bounce-slow {
+                  animation: bounce-slow 2.5s infinite;
+                }
+                @keyframes bounce-slow {
+                  0%, 100% { transform: translateY(0); }
+                  50% { transform: translateY(-8px); }
+                }
+              `}</style>
       </>
     );
   };
