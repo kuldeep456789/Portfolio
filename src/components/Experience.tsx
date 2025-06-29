@@ -103,8 +103,8 @@ const projects = [
   {
     title: "Currency Convertor",
     description: "Currency converter quickly converts amounts between different international currencies in real-time.",
-    tags: ["Streamlit", "Python", "Opencv"],
-    link: "https://realtimevechile-detection-using-yolov8n-master-ffhtjisz3cyh9y8.streamlit.app/",
+    tags: ["React", "Api", "Currency Convertor"],
+    link: "https://currency-convertor-taupe-ten.vercel.app/",
     color: "blue",
     // image: require('../img/real-time-tracking.jpg').default // Fix for require with ES modules
     image: currency
